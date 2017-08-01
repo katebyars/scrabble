@@ -32,27 +32,25 @@ public class Scrabble {
             } else if (alphabet[i].equals('K')) {
             scoreVals.put(alphabet[i], 5);
 
-            } else if ( (alphabet[i].equals('J') ) || (alphabet[i].equals('X') ) ) {
+            }
+            else if ( (alphabet[i].equals('J') ) || (alphabet[i].equals('X') ) ) {
                 scoreVals.put(alphabet[i], 8);
 
-            } else if ( (alphabet[i].equals('Q')) || (alphabet[i].equals('Z')) ) {
+            }
+
+            else if ( (alphabet[i].equals('Q')) || (alphabet[i].equals('Z')) ) {
             scoreVals.put(alphabet[i], 10);
 
-            } else return scoreVals.get(alphabet[i]);
+            }
+            else return scoreVals.get(alphabet[i]);
         }
 
 
-//        for (int i = 0; i <= splits12.length; i++) {
-
-//        }
-//        public String characterArray(String input) {
-//
-//            Map<Character, Integer> outputString = new HashMap();
-//        }
         int score = 0;
 
         for (int i = 0; i < result.length; i++) {
             score += scoreVals.get(result[i]);
-        }return score;
+        }
+        return score;
     }
 }
