@@ -10,8 +10,8 @@ public class Scrabble {
 
     public Integer calculateScore(String input){
         Map<Character, Integer> scoreVals = new HashMap();
-
-        return null;
+        scoreVals.put('a' ,1);
+        return scoreVals.get('a');
     }
 
 }
