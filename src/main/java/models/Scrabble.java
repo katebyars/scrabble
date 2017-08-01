@@ -1,6 +1,5 @@
 package models;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,12 +9,14 @@ import java.util.Map;
 public class Scrabble {
 
     public Integer calculateScore(String input) {
-        char[] splits12 = input.toCharArray();
+
+//        ArrayList<Object> splits12 = new ArrayList<Object>();
+        char[] result= input.toCharArray();
         Map<Character, Integer> scoreVals = new HashMap();
 
         Character[] alphabet = {'A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T', 'D', 'G', 'B', 'C', 'M', 'P', 'F', 'H', 'V', 'W', 'Y', 'K','J', 'X', 'Q', 'Z'};
 
-        for (int i = 0; i <= alphabet.length; i++) {
+        for (int i = 0; i < alphabet.length; i++) {
             if (alphabet[i].equals('A') || alphabet[i].equals('E') || alphabet[i].equals('I') || alphabet[i].equals('O')  ||alphabet[i].equals('U') || alphabet[i].equals('L')                || alphabet[i].equals('N') || alphabet[i].equals('R') || alphabet[i].equals('S')||  alphabet[i].equals('T') ) {
                 scoreVals.put(alphabet[i], 1);
 
@@ -37,10 +38,9 @@ public class Scrabble {
             } else if ( (alphabet[i].equals('Q')) || (alphabet[i].equals('Z')) ) {
             scoreVals.put(alphabet[i], 10);
 
-            } else {
-                return 1;
-            }
+            } else return scoreVals.get(alphabet[i]);
         }
+
 
 //        for (int i = 0; i <= splits12.length; i++) {
 
@@ -49,6 +49,10 @@ public class Scrabble {
 //
 //            Map<Character, Integer> outputString = new HashMap();
 //        }
-        return scoreVals.get(alphabet);
+        int score = 0;
+
+        for (int i = 0; i < result.length; i++) {
+            score += scoreVals.get(result[i]);
+        }return score;
     }
 }

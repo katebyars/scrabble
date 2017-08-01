@@ -20,7 +20,7 @@ public class ScrabbleTest {
     public void calculateScore_returnsScoreForTwoLetters_2() throws Exception {
         Scrabble testScrabble = new Scrabble();
         Integer expected = 2;
-        assertEquals(expected, testScrabble.calculateScore("ae"));
+        assertEquals(expected, testScrabble.calculateScore("AE"));
     }
 
 }
